@@ -5,12 +5,13 @@
 Plots the cross-validation curve, and upper and lower standard deviation
 curves, as a function of the \code{lambda} values used.}
 \usage{
-\method{plot}{cv.glmnet}(x, sign.lambda, ...)
+\method{plot}{cv.glmnet}(x, sign.lambda, col.bar, ...)
 }
 \arguments{
   \item{x}{fitted \code{"cv.glmnet"} object}
   \item{sign.lambda}{Either plot against \code{log(lambda)} (default) or
     its negative if \code{sign.lambda=-1}.}
+  \item{col.bar}{The color of the error bars}
   \item{\dots}{Other graphical parameters to plot}
 }
 \details{

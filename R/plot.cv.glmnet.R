@@ -1,4 +1,4 @@
-plot.cv.glmnet=function(x,sign.lambda=1,...){
+plot.cv.glmnet=function(x,sign.lambda=1,col.bar='darkgrey',...){
   cvobj=x
   xlab="log(Lambda)"
   if(sign.lambda<0)xlab=paste("-",xlab,sep="")
@@ -6,7 +6,7 @@ plot.cv.glmnet=function(x,sign.lambda=1,...){
   new.args=list(...)
   if(length(new.args))plot.args[names(new.args)]=new.args
 do.call("plot",plot.args)
-error.bars(sign.lambda*log(cvobj$lambda),cvobj$cvup,cvobj$cvlo,width=0.01,col="darkgrey")
+error.bars(sign.lambda*log(cvobj$lambda),cvobj$cvup,cvobj$cvlo,width=0.01,col=col.bar)
   points(sign.lambda*log(cvobj$lambda),cvobj$cvm,pch=20,col="red")
 axis(side=3,at=sign.lambda*log(cvobj$lambda),labels=paste(cvobj$nz),tick=FALSE,line=0)
 abline(v=sign.lambda*log(cvobj$lambda.min),lty=3)
